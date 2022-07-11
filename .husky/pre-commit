@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '
+{
+  "*.ts": [
+    "eslint --fix",
+    "prettier --write",
+    "npm run test"
+  ],
+  "*.{json,md}": [
+    "prettier --write"
+  ]
+}' | npx lint-staged --config -

@@ -1,0 +1,72 @@
+{
+  "name": "aws-node-typescript-rest-api",
+  "version": "1.0.0",
+  "description": "This is simple REST API example for AWS Lambda By Serverless framework with TypeScript.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.0.0 <=16.9.9"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint '**/*.ts'",
+    "lint:fix": "npm run lint -- --fix",
+    "local": "serverless offline",
+    "deploy": "serverless deploy",
+    "test": "cross-env NODE_ENV=dev npm run test:unit",
+    "test:unit": "cross-env NODE_ENV=dev jest --clearCache && cross-env NODE_ENV=dev jest",
+    "test:coverage": "cross-env NODE_ENV=dev npm run test:unit -- --coverage=true"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+github.com:left-clean/aws-node-typescript-rest-api.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "TypeScript",
+    "AWS Lambda"
+  ],
+  "author": "Vanio Almeida",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/left-clean/aws-node-typescript-rest-api/issues"
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/dotenv-safe": "^8.1.2",
+    "@types/jest": "^28.1.4",
+    "@types/lambda-tester": "^3.6.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.1",
+    "istanbul": "^0.4.5",
+    "jest-mock-extended": "^2.0.6",
+    "lambda-tester": "^4.0.1",
+    "lint-staged": "^13.0.3",
+    "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
+    "serverless-offline": "^8.8.1",
+    "serverless-plugin-typescript": "^2.1.2",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.2",
+    "tslint": "^5.1.3",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^4.7.4"
+  }
+}
